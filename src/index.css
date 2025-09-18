@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Matte Minimal Design System */
+@layer base {
+  :root {
+    /* Core Colors */
+    --mat-dark-blue: 220 30% 20%;   /* dark matte blue */
+    --mat-dark-gray: 220 10% 25%;   /* NEW: matte dark gray for text */
+    --mat-light-gray: 210 10% 92%;
+    --mat-green: 120 25% 40%;
+    --mat-red: 0 40% 45%;
+    --mat-cream: 45 30% 96%;
+
+    /* Light Mode */
+    --background: var(--mat-cream);
+    --foreground: var(--mat-dark-gray);
+
+    --card: var(--mat-light-gray);
+    --card-foreground: var(--mat-dark-gray);
+
+    --primary: var(--mat-dark-blue);
+    --primary-foreground: var(--mat-cream);
+
+    --secondary: var(--mat-light-gray);
+    --secondary-foreground: var(--mat-dark-gray);
+
+    --accent: var(--mat-green);
+    --accent-foreground: var(--mat-cream);
+
+    --destructive: var(--mat-red);
+    --destructive-foreground: var(--mat-cream);
+
+    --success: var(--mat-green);
+    --success-foreground: var(--mat-cream);
+
+    --warning: 43 30% 55%; 
+    --warning-foreground: var(--mat-dark-gray);
+
+    --border: 210 10% 85%;
+    --input: var(--mat-light-gray);
+    --ring: var(--mat-dark-blue);
+
+    /* Sidebar */
+    --sidebar-background: var(--mat-light-gray);
+    --sidebar-foreground: var(--mat-dark-gray);
+    --sidebar-primary: var(--mat-dark-blue);
+    --sidebar-primary-foreground: var(--mat-cream);
+    --sidebar-accent: 210 10% 85%;
+    --sidebar-accent-foreground: var(--mat-dark-gray);
+    --sidebar-border: 210 10% 80%;
+    --sidebar-ring: var(--mat-dark-blue);
+  }
+
+  .dark {
+    --background: var(--mat-dark-blue);
+    --foreground: var(--mat-cream);
+
+    --card: 220 20% 15%;
+    --card-foreground: var(--mat-cream);
+
+    --primary: var(--mat-green);
+    --primary-foreground: var(--mat-dark-blue);
+
+    --secondary: 220 20% 25%;
+    --secondary-foreground: var(--mat-cream);
+
+    --accent: var(--mat-green);
+    --accent-foreground: var(--mat-dark-blue);
+
+    --destructive: var(--mat-red);
+    --destructive-foreground: var(--mat-cream);
+
+    --success: var(--mat-green);
+    --success-foreground: var(--mat-dark-blue);
+
+    --warning: 43 25% 50%;
+    --warning-foreground: var(--mat-dark-blue);
+
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: var(--mat-green);
+
+    /* Sidebar */
+    --sidebar-background: 220 25% 18%;
+    --sidebar-foreground: var(--mat-cream);
+    --sidebar-primary: var(--mat-green);
+    --sidebar-primary-foreground: var(--mat-dark-blue);
+    --sidebar-accent: 220 20% 22%;
+    --sidebar-accent-foreground: var(--mat-cream);
+    --sidebar-border: 220 20% 22%;
+    --sidebar-ring: var(--mat-green);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* === Icon Color Rules === */
+  /* All lucide-react icons */
+  svg.lucide {
+    color: #1f2937;          /* Strong dark gray (always visible) */
+    stroke: currentColor;    /* Use the current text color */
+    fill: currentColor;      /* ✅ Fill inside so icons never look invisible */
+    filter: drop-shadow(0 0 0.6em rgba(30, 58, 138, 0.6)); /* subtle glow */
+  }
+
+  .dark svg.lucide {
+    color: #93c5fd;          /* Tailwind blue-300 */
+    stroke: currentColor;
+    fill: currentColor;
+    filter: drop-shadow(0 0 0.6em rgba(147, 197, 253, 0.6));
+  }
+
+  /* === Text Global Rules === */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    @apply text-gray-800;
+  }
+
+  .dark h1, 
+  .dark h2, 
+  .dark h3, 
+  .dark h4, 
+  .dark h5, 
+  .dark h6, 
+  .dark p, 
+  .dark span, 
+  .dark div {
+    @apply text-gray-200;
+  }
+
+  /* Optional helper utility classes */
+  .mat-icon-blue { @apply text-blue-800; }
+  .mat-icon-gray { @apply text-slate-700; }
+}
